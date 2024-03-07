@@ -3,6 +3,7 @@ import { MessageType } from '../../utils/utils';
 import { Message } from '../message/message';
 import { createProdut } from '../../services/products';
 import './productForm.css'; 
+import { useNavigate } from 'react-router-dom';
 
 export const ProductForm = () => {
   const [productData, setProductData] = useState({
@@ -13,6 +14,8 @@ export const ProductForm = () => {
     model: ''
   });
   const [message, setMessage] = useState(undefined);
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -114,7 +117,12 @@ export const ProductForm = () => {
             required
           />
         </div>
-        <button type="submit">Cadastrar Produto</button>
+        <div className='buttons-container'>
+
+          <button type="submit">Cadastrar Produto</button>
+          <button type="button" onClick={() => navigate('/products')}>Voltar</button>
+        </div>
+
       </form>
       {
         message && <Message message={message.message} type={message.type} />

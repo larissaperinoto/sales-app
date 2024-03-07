@@ -50,3 +50,8 @@ button {
 button:hover {
   background-color: #5ea99d;
 }
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
