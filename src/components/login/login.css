@@ -28,7 +28,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #7fd3b6; /* Cor verde água */
+  background-color: #7fd3b6; 
   color: #fff;
   font-size: 16px;
   cursor: pointer;
@@ -36,7 +36,7 @@
 }
 
 .login-button:hover {
-  background-color: #5ea99d; /* Cor verde água mais escura ao passar o mouse */
+  background-color: #5ea99d; 
 }
 
 .create-account-link {
