@@ -10,8 +10,9 @@ export async function register({ email, password, phone, name }) {
     },
     body: JSON.stringify({ email, password, phone, name })
   });
-
+  
   if (!response.ok) {
-    throw new Error('Não foi possível realizar cadastrar o usuário.');
+    const data = await response.json();
+    throw new Error(data.message ?? 'Não foi possível realizar cadastrar o usuário.');
   }
 }

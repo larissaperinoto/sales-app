@@ -17,20 +17,6 @@ export const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (validateEmail(email)) {
-      setMessage({ 
-        message: "Insira um email válido.", 
-        type: MessageType.ERROR 
-      });
-    } 
-    
-    if (validatePhone(phone)) {
-      setMessage({ 
-        message: "Insira um telefone válido.", 
-        type: MessageType.ERROR 
-      });
-    } 
-
     try {
 
       await register({ email, password, name, phone });
@@ -44,19 +30,10 @@ export const Register = () => {
 
     } catch(e) {
       setMessage({
-        message: "Não foi possível realizar o cadastro, tente novamente mais tarde.",
+        message: e.message,
         type: MessageType.ERROR
       });
     }
-  };
-
-  const validateEmail = (email) => {
-    const regexEmail = /\S+@\S+\.\S+/;
-    return regexEmail.test(email);
-  };
-
-  const validatePhone = (phone) => {
-    return phone.length === 10;
   };
 
   return (
