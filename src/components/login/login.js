@@ -18,7 +18,7 @@ export const Login = () => {
 
         navigate('/products');
       } catch (error) {
-        console.log(error)
+     
         setMessage({
           message: "Erro ao realizar login.",
           type: MessageType.ERROR

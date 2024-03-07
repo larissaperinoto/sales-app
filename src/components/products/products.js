@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './products.css'; 
 import { getProducts } from '../../services/products';
 import { useNavigate } from 'react-router-dom';
+import './products.css'; 
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
@@ -14,7 +14,6 @@ export const Products = () => {
   });
 
   const navigate = useNavigate();
-  console.log(products)
 
   useEffect(() => {
     async function getProductsReq() {
@@ -97,7 +96,7 @@ export const Products = () => {
             <p>Preço: {product.attributes[0].price}</p>
             <p>Cor: {product.attributes[0].color}</p>
             <p>Modelo: {product.attributes[0].model}</p>
-            <button onClick={ () => navigate('/edit') }>Editar</button>
+            <button onClick={ () => navigate('/edit', { state: product }) }>Editar</button>
           </div>
         ))}
       </div>
