@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Login } from './components/login/login';
 import { Register } from './components/register/register';
-import { ProtectedRoute } from './components/protectedRoute/protectedRoute';
 import { Products } from './components/products/products';
 import { ProductForm } from './components/productForm/productForm';
 
