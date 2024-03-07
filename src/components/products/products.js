@@ -94,6 +94,10 @@ export const Products = () => {
 
       </div>
 
+      {
+        products.length === 0 && <p>Cadastre um produto para começar.</p>
+      }
+
       <div className="product-list">
         {filteredProducts.map(product => (
           <div className="product-card" key={product.id}>
