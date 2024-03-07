@@ -15,7 +15,7 @@ export async function getProducts() {
   });
 
   if (response.status === 401) {
-    window.open('/');
+    window.open('/', "_blank");
   }
 
   if (!response.ok) {
@@ -43,7 +43,7 @@ export async function createProdut(product) {
   });
 
   if (response.status === 401) {
-    window.open('/');
+    window.open('/', "_blank");
   }
 
   if (response.status !== 201) {
@@ -68,9 +68,9 @@ export async function updateProduct(product) {
     },
     body: JSON.stringify(product)
   });
-  
+
   if (response.status === 401) {
-    window.open('/');
+    window.open('/', "_blank");
   }
 
   if (!response.ok) {
