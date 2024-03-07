@@ -1,0 +1,19 @@
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.error {
+  background-color: #ffcccc; 
+  color: #cc0000;
+}
+
+.success {
+  background-color: #ccffcc; 
+  color: #009900;
+}
+  
