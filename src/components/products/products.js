@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../services/products';
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../../services/login';
 import './products.css'; 
 
 export const Products = () => {
@@ -86,6 +87,11 @@ export const Products = () => {
           onChange={handleFilterChange}
         />
         <button onClick={() => navigate('/create') }>Cadastrar novo produto</button>
+        <button onClick={() => {
+          logout();
+          navigate('/');
+        }}>Sair</button>
+
       </div>
 
       <div className="product-list">

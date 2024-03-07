@@ -39,3 +39,7 @@ export async function isUserLogged() {
     return true;
   }
 }
+
+export function logout() {
+  localStorage.clear();
+}
