@@ -22,12 +22,12 @@
   border: 1px solid #ccc;
 }
 
-.product-card button {
+.product-card button, .filters button {
   margin-top: 10px;
   padding: 8px 16px;
   border: none;
   border-radius: 5px;
-  background-color: #7fd3b6; /* Verde água */
+  background-color: #7fd3b6; 
   color: #fff;
   cursor: pointer;
 }

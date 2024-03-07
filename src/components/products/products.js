@@ -86,6 +86,7 @@ export const Products = () => {
           value={filters.search}
           onChange={handleFilterChange}
         />
+        <button onClick={() => navigate('/create') }>Cadastrar novo produto</button>
       </div>
 
       <div className="product-list">
@@ -96,7 +97,7 @@ export const Products = () => {
             <p>Preço: {product.attributes[0].price}</p>
             <p>Cor: {product.attributes[0].color}</p>
             <p>Modelo: {product.attributes[0].model}</p>
-            <button>Editar</button>
+            <button onClick={ () => navigate('/edit') }>Editar</button>
           </div>
         ))}
       </div>
