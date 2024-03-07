@@ -1,0 +1,33 @@
+.filters {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.filters input {
+  margin-right: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #7fd3b6; /* Verde água */
+  color: #fff;
+  cursor: pointer;
+}

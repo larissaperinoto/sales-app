@@ -17,7 +17,25 @@ export async function login({ email, password }) {
 
   const data = await response.json();
 
-  localStorage.setItem('accessToken', data.token);
-  localStorage.setItem('expiresIn', data.expirationTime);
+  const now = new Date().getTime();
 
+  const expiration = now + data.expirationTime * 1000;
+
+  localStorage.setItem('accessToken', data.token);
+  localStorage.setItem('expiresIn', expiration);
+}
+
+export function getToken() {
+  const token = localStorage.getItem('accessToken');
+  return token;
+}
+
+export async function isUserLogged() {
+  const now = new Date().getTime();
+  const expiresIn = localStorage.getItem('expiresIn');
+  if (now > +expiresIn) {
+    return false;
+  } else {
+    return true;
+  }
 }
