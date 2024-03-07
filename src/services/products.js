@@ -14,6 +14,10 @@ export async function getProducts() {
     },
   });
 
+  if (response.status === 401) {
+    window.open('/');
+  }
+
   if (!response.ok) {
     throw new Error('Não foi possível buscar os produtos.');
   }
@@ -21,4 +25,31 @@ export async function getProducts() {
   const data = await response.json();
 
   return data;
+}
+
+
+export async function createProdut(product) {
+
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
+  const productsPath = process.env.REACT_APP_PRODUCTS_PATH;
+  const token = getToken();
+
+  console.log(token, product)
+
+  const response = await fetch(baseUrl + productsPath, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': token
+    },
+    body: JSON.stringify(product)
+  });
+
+  if (response.status === 401) {
+    window.open('/');
+  }
+
+  if (response.status !== 201) {
+    throw new Error('Não foi possível cadastrar produto.');
+  }
 }
