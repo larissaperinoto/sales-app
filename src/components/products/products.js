@@ -47,7 +47,7 @@ export const Products = () => {
       if (filters.color && !product.attributes[0].color.toLowerCase().includes(filters.color.toLowerCase())) {
         return false;
       }
-      if (filters.search && !product.attributes[0].name.toLowerCase().includes(filters.search.toLowerCase())) {
+      if (filters.search && !product.name.toLowerCase().includes(filters.search.toLowerCase())) {
         return false;
       }
       return true;
