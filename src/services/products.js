@@ -15,7 +15,7 @@ export async function getProducts() {
   });
 
   if (response.status === 401) {
-    window.open('/', "_blank");
+    window.location = "/";
   }
 
   if (!response.ok) {
@@ -43,16 +43,19 @@ export async function createProdut(product) {
   });
 
   if (response.status === 401) {
-    window.open('/', "_blank");
-  }
-
-  if (response.status !== 201) {
-    throw new Error('Não foi possível cadastrar produto.');
+    window.location = "/";
   }
 
   if (response.status === 409) {
     throw new Error('O produto já existe, utilize um nome diferente.');
   }
+
+  if (response.status !== 201) {
+    const { message } = await response.json();
+    throw new Error(message);
+  }
+
+  
 }
 
 export async function updateProduct(product) {
@@ -70,10 +73,11 @@ export async function updateProduct(product) {
   });
 
   if (response.status === 401) {
-    window.open('/', "_blank");
+    window.location = "/";
   }
 
   if (!response.ok) {
-    throw new Error('Não foi possível atualizar o produto.');
+    const { message } = await response.json();
+    throw new Error(message);
   }
 }
